@@ -5,6 +5,7 @@ import { Segment, Button, Input } from 'semantic-ui-react';
 import { Picker, emojiIndex } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
 
+
 import FileModal from './FileModal';
 import ProgressBar from './ProgressBar';
 
@@ -251,13 +252,13 @@ class MessageForm extends React.Component {
                     <Button
                         onClick={this.sendMessage}
                         disabled={loading}
-                        color="orange"
+                        color="black"
                         content="Add Reply"
                         labelPosition="left"
                         icon="edit"
                     />
                     <Button
-                        color="teal"
+                        color="blue"
                         disabled={uploadState === 'uploading'}
                         onClick={this.openModal}
                         content="Upload Media"
@@ -278,5 +279,7 @@ class MessageForm extends React.Component {
         );
     }
 }
+
+
 
 export default MessageForm;

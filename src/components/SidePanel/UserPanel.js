@@ -116,10 +116,10 @@ class UserPanel extends React.Component {
 
     render() {
         const { user, modal, previewImage, croppedImage } = this.state;
-        const { primaryColor } = this.props;
+        const { colorPrimary } = this.props;
 
         return (
-            <Grid style={{ background: primaryColor }}>
+            <Grid style={{ background: colorPrimary}}>
                 <Grid.Column>
                     <Grid.Row style={{ padding: '1.2em', margin: 0 }}>
                         {/* App Header */}

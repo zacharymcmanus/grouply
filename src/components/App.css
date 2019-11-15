@@ -5,6 +5,19 @@ body,
     background: #eee;
     padding: 1em;
 }
+/* Main App Colors */
+.colorFeather {
+    color: #77C9D4;
+}
+.colorMarine {
+    color: #57Bc90;
+}
+.colorForest {
+    color: #015249;
+}
+.colorGrey {
+    color: #A5A5AF;
+}
 
 /* SidePanel.js */
 .menu {

@@ -62,12 +62,12 @@ class Login extends React.Component {
 
     render() {
         const { email, password, errors, loading } = this.state;
-
+        
         return (
             <Grid textAlign="center" verticalAlign="middle" className="app">
                 <Grid.Column style={{ maxWidth: 450 }}>
                     <Header as="h1" icon color="violet" textAlign="center">
-                        <Icon name="rocketchat" color="violet" />
+                        <Icon name="globe icon" color="violet" />
                         Login to Grouply
                     </Header>
                     <Form onSubmit={this.handleSubmit} size="large">

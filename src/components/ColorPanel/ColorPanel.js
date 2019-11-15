@@ -22,14 +22,6 @@ class ColorPanel extends React.Component {
         }
     }
 
-    componentWillUnmount() {
-        this.removeListener();
-    }
-
-    removeListener = () => {
-        this.state.usersRef.child(`${this.state.user.uid}/colors`).off();
-    }
-
     addListener = userId => {
         let userColors = [];
         this.state.usersRef
@@ -60,6 +52,7 @@ class ColorPanel extends React.Component {
             })
             .then(() => {
                 console.log('Colors added');
+                alert('new color pallete added!');
                 this.closeModal();
             })
             .catch(err => console.error(err));
@@ -71,17 +64,17 @@ class ColorPanel extends React.Component {
             <React.Fragment key={i}>
                 <Divider />
                 <div
-                    className="color__container"
+                    className='color__container'
                     onClick={() =>
                         this.props.setColors(color.primary, color.secondary)
                     }
                 >
                     <div
-                        className="color__square"
+                        className='color__square'
                         style={{ background: color.primary }}
                     >
                         <div
-                            className="color__overlay"
+                            className='color__overlay'
                             style={{ background: color.secondary }}
                         />
                     </div>
@@ -99,17 +92,17 @@ class ColorPanel extends React.Component {
         return (
             <Sidebar
                 as={Menu}
-                icon="labeled"
+                icon='labeled'
                 inverted
                 vertical
                 visible
-                width="very thin"
+                width='very thin'
             >
                 <Divider />
                 <Button
-                    icon="add"
-                    size="small"
-                    color="blue"
+                    icon='add'
+                    size='small'
+                    color='blue'
                     onClick={this.openModal}
                 />
                 {this.displayUserColors(userColors)}
@@ -119,7 +112,7 @@ class ColorPanel extends React.Component {
                     <Modal.Header>Choose App Colors</Modal.Header>
                     <Modal.Content>
                         <Segment inverted>
-                            <Label content="Primary Color" />
+                            <Label content='Primary Color' />
                             <SliderPicker
                                 color={primary}
                                 onChange={this.handleChangePrimary}
@@ -127,7 +120,7 @@ class ColorPanel extends React.Component {
                         </Segment>
 
                         <Segment inverted>
-                            <Label content="Secondary Color" />
+                            <Label content='Secondary Color' />
                             <SliderPicker
                                 color={secondary}
                                 onChange={this.handleChangeSecondary}
@@ -136,14 +129,14 @@ class ColorPanel extends React.Component {
                     </Modal.Content>
                     <Modal.Actions>
                         <Button
-                            color="green"
+                            color='green'
                             inverted
                             onClick={this.handleSaveColors}
                         >
-                            <Icon name="checkmark" /> Save Colors
+                            <Icon name='checkmark' /> Save Colors
                         </Button>
-                        <Button color="red" inverted onClick={this.closeModal}>
-                            <Icon name="remove" /> Cancel
+                        <Button color='red' inverted onClick={this.closeModal}>
+                            <Icon name='remove' /> Cancel
                         </Button>
                     </Modal.Actions>
                 </Modal>
@@ -152,7 +145,4 @@ class ColorPanel extends React.Component {
     }
 }
 
-export default connect(
-    null,
-    { setColors }
-)(ColorPanel);
+export default connect(null, { setColors })(ColorPanel);
